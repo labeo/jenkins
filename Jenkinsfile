@@ -3,8 +3,9 @@ pipeline {
   stages {
     stage('echo') {
       steps {
-        sh 'echo \'jenkins test\''
         writeFile(file: 'file', text: 'tekst')
+        sh 'echo \'jenkins test\''
+        echo 'pwd()'
       }
     }
   }
