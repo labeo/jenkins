@@ -1,15 +1,15 @@
 pipeline {
-  agent any
-  stages {
-    stage('echo') {
-      steps {
-        writeFile(file: 'file', text: 'tekst')
-        sh 'echo \'jenkins test\''
-        echo 'pwd()'
-      }
+    agent {
+        label {
+            label ""
+            customWorkspace "C:/work/${BRANCH_NAME}"
+        }
     }
-  }
-  environment {
-    customWorkspace = 'master/'
-  }
+    stages {
+        stage("foo") {
+            steps {
+                echo "Workspace dir is ${pwd()}"
+            }
+        }
+    }
 }
