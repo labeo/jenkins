@@ -3,8 +3,10 @@ pipeline {
   stages {
     stage('echo') {
       steps {
-        def workspace = pwd()
-        sh "echo ${workspace}"
+        step {
+          def workspace = pwd()
+          sh "echo ${workspace}"
+        }
       }
     }
   }
