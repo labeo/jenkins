@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('echo') {
       steps {
-        sh 'echo \'jenkins test\''
+        def workspace = pwd()
+        sh "echo ${workspace}"
       }
     }
   }
