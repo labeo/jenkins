@@ -2,7 +2,7 @@ pipeline {
     agent {
         label {
             label ""
-            customWorkspace "C:/work/${BRANCH_NAME}"
+            customWorkspace "work/${BRANCH_NAME}/"
         }
     }
     stages {
