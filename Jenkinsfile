@@ -2,7 +2,7 @@ pipeline {
   agent {
     node {
       customWorkspace "jenkins/${BRANCH_NAME}/"
-      label ''
+      label 'aa'
     }
 
   }
@@ -10,6 +10,11 @@ pipeline {
     stage('start') {
       steps {
         echo "Workspace directory is ${pwd()}"
+      }
+    }
+    stage('build') {
+      steps {
+        build 'job'
       }
     }
   }
