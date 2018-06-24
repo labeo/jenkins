@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('start') {
       steps {
-        echo "Workspace dir is ${pwd()}"
+        echo "Workspace directory is ${pwd()}"
       }
     }
   }
