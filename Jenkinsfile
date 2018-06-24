@@ -1,15 +1,16 @@
 pipeline {
-    agent {
-        label {
-            label ""
-            customWorkspace "work/${BRANCH_NAME}/"
-        }
+  agent {
+    node {
+      customWorkspace "work/${BRANCH_NAME}/"
+      label 'jenkins'
     }
-    stages {
-        stage("foo") {
-            steps {
-                echo "Workspace dir is ${pwd()}"
-            }
-        }
+
+  }
+  stages {
+    stage('start') {
+      steps {
+        echo "Workspace dir is ${pwd()}"
+      }
     }
+  }
 }
