@@ -1,8 +1,8 @@
 pipeline {
   agent {
     node {
-      customWorkspace "work/${BRANCH_NAME}/"
-      label 'jenkins'
+      customWorkspace "jenkins/${BRANCH_NAME}/"
+      label ''
     }
 
   }
