@@ -2,7 +2,7 @@ pipeline {
   agent {
     node {
       customWorkspace "jenkins/${BRANCH_NAME}/"
-      label 'aa'
+      label ''
     }
 
   }
