@@ -1,21 +1,12 @@
 pipeline {
   agent {
-    node {
-      customWorkspace "jenkins/${BRANCH_NAME}/"
-      label ''
+        docker { image 'node:7-alpine' }
     }
-
-  }
-  stages {
-    stage('start') {
-      steps {
-        echo "Workspace directory is ${pwd()}"
-      }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
     }
-    stage('build') {
-      steps {
-        sh 'dotnet restore'
-      }
-    }
-  }
 }
