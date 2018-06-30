@@ -14,7 +14,6 @@ pipeline {
     }
     stage('build') {
       steps {
-        build 'job'
         sh 'dotnet restore'
       }
     }
